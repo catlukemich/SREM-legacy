@@ -1,0 +1,17 @@
+{
+    "Lua.workspace.ignoreDir": [
+        ".vscode",
+        ".idea",
+        "build"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.idea": true,
+        "**/.vs": true,
+        "**/.vscode": true,
+        "**/assets": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/working": true
+    }
+}
