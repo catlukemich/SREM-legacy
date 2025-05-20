@@ -3,11 +3,9 @@ import os
 import pygame.image
 
 images = {} # The cache of images
-images_dir = "pixel"
-images_dir = "svg"
 
 def load_image(path):
-    filepath = "assets" + os.sep + images_dir + os.sep + path
+    filepath = "assets" + os.sep + path
 
     if not filepath in images:
         # If the image is not cached load it and add to the cache:

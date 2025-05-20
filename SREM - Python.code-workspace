@@ -4,11 +4,18 @@
 			"path": "."
 		},
 		{
-			"path": "assets"
+			"path": "Assets"
 		},
 		{
-			"path": "working"
+			"path": "Documents"
+		},
+		{
+			"path": "Working"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"path-autocomplete.pathMappings": {
+		"$root" :  ""
+		}
+	}
 }
