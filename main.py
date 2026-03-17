@@ -10,28 +10,24 @@ from tkinter import *
 # The main game class that is intantiated on startup.
 class Game:
 
-    def __init__(self, w, h):
-        # Screen setup
-        pygame.init()
-        self.window = pygame.display.set_mode((w, h))
-        pygame.display.set_caption("SREM")
-        pygame.display.set_icon(assets.load_image("icon.png"))
-        # The onscreen display objects creation:
-        self.view = iso.View(self.window)
+    def __init__(self, window):
+        # Properties initialization:
+        self.window = window 
+        self.view = iso.View(self.window) 
         self.gui = gui.Gui(self.window)
-        # Player control object
         self.player = player.Player(self)
-        # World creation
         self.world = world.World(self)
-        self.world.display()
-        # Interface creation
         self.interface = interface.Interface(self)
-        self.interface.display()
-        # Utilities
+        
+        # Game loop variables:
         self.done = False  # A flag for the game loop indicating if the game is done playing.
         self.clock = pygame.time.Clock() # Clock to control the framerate
+        
+        self.world.display()
+        self.interface.display()
 
     def loop(self):
+        
         while not self.done:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -56,7 +52,11 @@ class Game:
 
 
 if __name__ == "__main__":
+    pygame.init()
     w = 800
     h = 600
-    game = Game(w, h)
+    window = pygame.display.set_mode((w, h))
+    pygame.display.set_caption("SREM")
+    pygame.display.set_icon(assets.load_image("icon.png"))
+    game = Game(window)
     game.loop()
